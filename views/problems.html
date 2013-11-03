@@ -1,0 +1,38 @@
+<div id='problems-bar'>
+	<span class='problems-bar-inside' id='problems-bar-student'>Student: {{student}}</span>
+	<span class='problems-bar-inside' id='problems-bar-problems' ng-if='currentProblem.name != null && search == "" '>Current Problem: {{currentProblem.name}}</span>
+	<span class='problems-bar-inside' id='problems-bar-problems' ng-if='search != "" && search != null'>Search For: {{search}}</span>
+	<div style='clear:both'>
+		<span class='button' ng-click="toggleShowColorWinow()" id='problems-chButton'>Color Help</span>
+		<span class='problems-bar-inside'>Search:</span>
+		<input id='problems-search-txt' style="background-color: white;" ng-model='search' />
+	</div>
+	<span style='display:block; clear:both'></span>
+</div>
+<a class='problems-button button' id='problems-bar-problemButton' ng-click="toggleShow()">Catergorys</a>
+<a class='problems-button button' id='problems-bar-logout' href='#/logout'>Logout</a>
+<div id='problems-list-container' style='display:none'>
+	<ul id='problem-ul' ng-if='jplProblemNames.length>0'>
+		<li class='problems-list-item' ng-repeat="name in jplProblemNames">
+			<a ng-click='changeProblemName(name.value)' class='problems-list-names {{name.selected}}'>{{name.value}}</a>
+		</li>
+	</ul>
+	<p style='text-align: center' ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
+		Loading JPL Problems Please wait..
+	</p>
+	<span style='display:block; clear:both'></span>
+</div>
+<span style='display:block; clear:both;'></span>
+<div>
+	<p style='text-align: center; font-weight: bold' ng-if='currentProblem == null'>
+		Please Select a Problem Catergory
+	</p>
+	<div id='problem-boxes-container' ng-if='currentProblem.array != null'>
+		<div ng-repeat="problem in currentProblem.array">
+			<div class='problem-boxes' style='background-color:{{problem.color}}'>
+				{{problem.name}}
+			</div>
+		</div>
+	</div>
+	<span style='display:block; clear:both;'></span>
+</div>

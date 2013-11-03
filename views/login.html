@@ -1,0 +1,34 @@
+<img id='login-image' src="images/jpl300.png" />
+
+<div id='login-error' class='isValid false'>{{loginError}}</div>
+
+<form id='login-form' name='loginForm' ng-model='loginForm' name="form" class="css-form" novalidate ng-submit='loginFunction(loginForm)'>
+	<div class='login-label'>Course:</div>
+	<div class='login-input'>
+		<select ng-model='login.course' notempty>
+			<option value="1001ICT" selected="selected">1001ICT</option>
+			<option value="7001ICT">7001ICT</option>
+			<option value="1005ICT">1005ICT</option>
+			<option value="7005ICT">7005ICT</option>
+			<option value="GRIFFICT1">GRIFFICT1</option>
+			<option value="GRIFFICT2">GRIFFICT2</option>
+		</select>
+	</div>
+	
+	<div class='login-label'>Student:</div>
+
+	<div class='login-input'>
+		<input type='text' ng-model='login.student' student></input>
+	</div>
+
+	<div class='login-label'>Password:</div>
+
+	<div class='login-input'>
+		<input type="password" ng-model="login.password" notempty></input>
+	</div>
+
+
+	<span style='display:block; clear:both'></span>
+
+	<button id='login-button' ng-disabled="!loginForm.$valid" class='button' ng-click='loginFunction(loginForm)' disabled="disabled">Login</button>
+</form>

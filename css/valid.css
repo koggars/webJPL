@@ -1,0 +1,16 @@
+.ng-invalid.ng-dirty {
+	background-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+	background-color: #78FA89;
+}
+
+.isValid.false
+{
+	color: #FA787E;
+}
+.isValid.true
+{
+	color: #78FA89;
+}

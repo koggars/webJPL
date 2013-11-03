@@ -1,0 +1,18 @@
+.button {
+    background-color: #222;
+    border: solid 1px #000;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5) inset, -1px -1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.button:active {
+    box-shadow: -1px -1px 1px 1px rgba(255, 255, 255, 0.5) inset, 1px 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+    background-color: #444;
+}
