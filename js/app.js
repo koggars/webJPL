@@ -1,4 +1,5 @@
 var webJPLApp = angular.module('webJPLApp', ['ngRoute','ngCookies','webJPLControllers']);
+var webJPLControllers = angular.module('webJPLControllers', []);
 
 webJPLApp.config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.useXDomain = true;

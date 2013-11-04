@@ -3,7 +3,15 @@ webJPLApp.factory("GlobalHeader",function(){
 		login : {
 			header : "Login to use webJPL",
 			css : "login"
-		}
+		},
+    setHeader: function(header,type)
+    {
+      header.header = type.header;
+      header.css = type.css;
+
+      return header;
+    }
+
 	}
 
 	return globalHeaders;
