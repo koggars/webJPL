@@ -93,3 +93,36 @@
     padding: 4px;
     margin-right: 5px;
 }
+
+.problem-color-text {
+    font-weight: normal;
+    float: left;
+    width: 67%;
+    font-size: 16px;
+    margin: 23px 0px;
+    text-align: left;
+}
+.problem-color-box {
+    width: 13%;
+    height: 70px;
+    margin: 10px 5%;
+    float: left;
+    border: solid 2px #222;
+}
+#problem-color-guide-header {
+    text-align: center;
+    display: block;
+    font-size: 20px;
+}
+#problem-color-guide {
+    width: 97%;
+    margin: auto;
+    background-color: #CBDBE9;
+    border: solid 2px #222;
+    margin: 10px auto;
+    padding-top: 10px;
+}
+.problem-color-row {
+    float: left;
+    width: 33%;
+}

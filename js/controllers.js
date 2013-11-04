@@ -66,9 +66,12 @@ webJPLControllers.controller('WebJPLProblems',
 
 		$rootScope.header =  userData.coursecode+" JPL Problems";
 		$rootScope.css = "problems";
-
+		$scope.search = "";
 		$scope.student = userData.username;
-		$window.jpls = jplStatus;
+		$scope.totalSearchArray = [];
+		$scope.colorGuide = jplStatus;
+
+
 		$http.get(jplLinks.problems, {params: {coursecode: userData.coursecode, username: userData.username}}).success(function(data) {
 			var tmp = data.trim().split("$");
 			var problemNameArray = [];
@@ -90,18 +93,23 @@ webJPLControllers.controller('WebJPLProblems',
 							probObj.name = tmp2[0];
 							probObj.status = tmp2[1];
 							probObj.color = jplStatus[probObj.status].color;
+							probObj.statusText = jplStatus[probObj.status].statusText;
+							probObj.header = problemName;
 
 							problemObjects.push(probObj);
+
+							$scope.totalSearchArray.push(probObj);
 						}
 					}
 					problemNameArray.push({value: problemName});
 					problemsArray[problemName] = problemObjects;
+
 				}
 			}
 
 			$scope.jplProblemNames = problemNameArray;
 			$scope.jplTotalProblems = problemsArray;
-
+			console.log($scope.totalSearchArray);
 		});
 		$scope.showProblems = false;
 
@@ -118,6 +126,21 @@ webJPLControllers.controller('WebJPLProblems',
 
 			$scope.showProblems = !$scope.showProblems;
 		}
+		$scope.showColorHelp = false;
+		$scope.toggleShowColorWinow = function()
+		{
+			if($scope.showColorHelp)
+			{
+				$("#problem-color-guide").slideUp('slow')
+			}
+			else
+			{
+				$("#problem-color-guide").slideDown('fast')
+			}
+			$scope.showColorHelp = !$scope.showColorHelp;
+			$scope.showColorText = ($scope.showColorHelp) ? "Hide" : "Show";
+		}
+		$scope.showColorText = "Show";
 		$scope.currentProblem = null;
 		$scope.changeProblemName = function(name)
 		{
@@ -133,6 +156,8 @@ webJPLControllers.controller('WebJPLProblems',
 				$scope.currentProblem = currentProblem;
 				$scope.toggleShow();
 			}
+
+			$scope.search = "";
 		}
 	});
 
