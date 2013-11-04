@@ -40,7 +40,7 @@
 		<div ng-repeat="problem in currentProblem.array">
 			<div class='problem-boxes' style='background-color:{{problem.color}}'>
 				<div class='problem-boxes-name'>{{problem.name}}</div>
-				<div class='problem-boxes-info button'>i</div>
+				<div class='problem-boxes-info button' ng-click='displayProblemDesc(problem)'>i</div>
 			</div>
 		</div>
 	</div>
