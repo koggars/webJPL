@@ -16,3 +16,11 @@
     box-shadow: -1px -1px 1px 1px rgba(255, 255, 255, 0.5) inset, 1px 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
     background-color: #444;
 }
+
+.button.invert {
+    background-color: #458CCC;
+    color: #000;
+}
+.button.invert:active {
+    background-color: #7CB5E7;
+}

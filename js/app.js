@@ -22,6 +22,10 @@ webJPLApp.config(
         templateUrl: 'views/problems.html',
         controller: 'WebJPLProblems'
       }).
+      when('/code', {
+        templateUrl: 'views/code.html',
+        controller: 'WebJPLCode'
+      }).
       otherwise({
         redirectTo: '/'
       })

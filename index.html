@@ -26,12 +26,15 @@
 		<script src="js/controllers/WebJPLLogin.js"></script>
 		<script src="js/controllers/WebJPLLogout.js"></script>
 		<script src="js/controllers/WebJPLProblems.js"></script>
-
+		<script src="js/controllers/WebJPLCode.js"></script>
 		
 	</head>
 	<body>
 		<div id='root-main'>
-			<div id='root-header' class='root-bar'><p id='root-header-content'>{{header}}</p></div>
+			<div id='root-header' class='root-bar'>
+				<img ng-show='showJPLImage' id="jplHeader"src="images/jplwhite30.jpg">
+				<p id='root-header-content'>{{header}}</p>
+			</div>
 			<div id='root-body'>
 				<div ng-view></div>
 			</div>

@@ -1,3 +1,5 @@
+<a class='problems-button button invert' id='problems-bar-problemButton' ng-click="toggleShow()">Catergorys</a>
+<a class='problems-button button invert' id='problems-bar-logout' href='#/logout'>Logout</a>
 <div id='problems-bar'>
 	<span class='problems-bar-inside' id='problems-bar-student'>Student: {{student}}</span>
 	<span class='problems-bar-inside' id='problems-bar-problems' ng-if='currentProblem.name != null && search == "" '>Current Problem: {{currentProblem.name}}</span>
@@ -17,10 +19,7 @@
 		</div>
 		<span style='display:block; clear:both'></span>
 	</div>
-</div>
-<a class='problems-button button' id='problems-bar-problemButton' ng-click="toggleShow()">Catergorys</a>
-<a class='problems-button button' id='problems-bar-logout' href='#/logout'>Logout</a>
-<div id='problems-list-container' style='display:none'>
+	<div id='problems-list-container' style='display:none'>
 	<ul id='problem-ul' ng-if='jplProblemNames.length>0'>
 		<li class='problems-list-item' ng-repeat="name in jplProblemNames">
 			<a ng-click='changeProblemName(name.value)' class='problems-list-names {{name.selected}}'>{{name.value}}</a>
@@ -30,6 +29,7 @@
 		Loading JPL Problems Please wait..
 	</p>
 	<span style='display:block; clear:both'></span>
+</div>
 </div>
 <span style='display:block; clear:both;'></span>
 <div ng-if='search == ""'>
@@ -55,7 +55,7 @@
 		<div ng-repeat="all in totalSearchArray | filter: search">
 			<div class='problem-boxes' style='background-color:{{all.color}}'>
 				<div class='problem-boxes-name'>{{all.name}}</div>
-				<div class='problem-boxes-info button'>i</div>
+				<div class='problem-boxes-info button' ng-click='findObject(all.name)'>i</div>
 			</div>
 		</div>
 	</div>
