@@ -8,11 +8,11 @@ webJPLControllers.controller('WebJPLCode',
 		var code = $location.search().c;
 		if(code == null)
 		{
-			$rootScope.header =  "Write Your Own Code";
+			$rootScope.header = "Write Your Own Code";
 		}
 		else
 		{
-			$rootScope.header =  code+" Problem";
+			$rootScope.header = code+" Problem";
 		}
 		$rootScope.css = "problems";
-		//$rootScope.showJPLImage = true;
+	});

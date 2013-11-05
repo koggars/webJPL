@@ -1,0 +1,9 @@
+<a class='button' id='home-logout' href='#/logout'>Logout</a>
+<div id='home-student'>Student: {{student}}</div>
+<div id='home-button-container'>
+	<div ng-repeat='link in navButtons' class='home-button-divs'>
+		<a class='home-button button {{link.color}}' href="{{link.location}}">
+			{{link.title}}
+		</a>
+	</div>
+</div>

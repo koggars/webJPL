@@ -1,25 +1,32 @@
-<a class='problems-button button invert' id='problems-bar-problemButton' ng-click="toggleShow()">Catergorys</a>
-<a class='problems-button button invert' id='problems-bar-logout' href='#/logout'>Logout</a>
-<div id='problems-bar'>
-	<span class='problems-bar-inside' id='problems-bar-student'>Student: {{student}}</span>
-	<span class='problems-bar-inside' id='problems-bar-problems' ng-if='currentProblem.name != null && search == "" '>Current Problem: {{currentProblem.name}}</span>
-	<span class='problems-bar-inside' id='problems-bar-problems' ng-if='search != "" && search != null'>Search For: {{search}}</span>
-	<div style='clear:both'>
-		<span class='button' ng-click="toggleShowColorWinow()" id='problems-chButton'>{{showColorText}} Color Guide</span>
-		<span class='problems-bar-inside'>Search:</span>
-		<input id='problems-search-txt' style="background-color: white;" ng-model='search' />
+<a class='button' id='problems-back-button' href='#/home'>Back</a>
+
+<div class='boxEffect' id='problems-status' ng-if='(currentProblem.name != null && search == "") || (search != "" && search != null)'>
+	<span ng-if='currentProblem.name != null && search == "" '>Current Problem: {{currentProblem.name}}</span>
+	<span ng-if='search != "" && search != null'>Search For: {{search}}</span>
+</div>
+
+<div class='boxEffect' id='problems-search'>
+	<span id='problems-search-label'>Search:</span>
+	<input id='problems-search-input' style="background-color: white;" ng-model='search' />
+</div>
+
+
+<a class='problems-button button' id='problems-catergory-button' ng-click="toggleShow()">{{showProblemText}} Catergorys</a>
+<span class='problems-button button' id='problems-color-guide-button' ng-click="toggleShowColorWinow()" id='problems-chButton'>{{showColorText}} Color Guide</span>
+<span style='display:block; clear:both'></span>
+
+
+<div id='problem-color-guide' style="display:none">
+	<span id='problem-color-guide-header'>Color Legend</span>
+	<div ng-repeat="guide in colorGuide" class='problem-color-row'>
+		<div class='problem-color-box' style='background-color: {{guide.color}}'>
+		</div>
+		<div class='problem-color-text'>{{guide.statusText}}</div>
 	</div>
 	<span style='display:block; clear:both'></span>
-	<div id='problem-color-guide' style="display:none">
-		<span id='problem-color-guide-header'>Color Legend</span>
-		<div ng-repeat="guide in colorGuide" class='problem-color-row'>
-			<div class='problem-color-box' style='background-color: {{guide.color}}'>
-			</div>
-			<div class='problem-color-text'>{{guide.statusText}}</div>
-		</div>
-		<span style='display:block; clear:both'></span>
-	</div>
-	<div id='problems-list-container' style='display:none'>
+</div>
+
+<div id='problems-list-container' style='display:none'>
 	<ul id='problem-ul' ng-if='jplProblemNames.length>0'>
 		<li class='problems-list-item' ng-repeat="name in jplProblemNames">
 			<a ng-click='changeProblemName(name.value)' class='problems-list-names {{name.selected}}'>{{name.value}}</a>
@@ -28,10 +35,8 @@
 	<p style='text-align: center' ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
 		Loading JPL Problems Please wait..
 	</p>
-	<span style='display:block; clear:both'></span>
 </div>
-</div>
-<span style='display:block; clear:both;'></span>
+
 <div ng-if='search == ""'>
 	<p style='text-align: center; font-weight: bold' ng-if='currentProblem == null'>
 		Search Or Select a Problem Catergory

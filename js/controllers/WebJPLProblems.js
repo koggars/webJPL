@@ -6,7 +6,7 @@ webJPLControllers.controller('WebJPLProblems',
 		if(userData == null)
 			$location.path("/");	
 
-		$rootScope.header =  userData.coursecode+" JPL Problems";
+		$rootScope.header =  "JPL Problems";
 		$rootScope.css = "problems";
 		//$rootScope.showJPLImage = true;
 
@@ -107,9 +107,11 @@ webJPLControllers.controller('WebJPLProblems',
 			{
 				$("#problems-list-container").slideDown('fast')
 			}
-
+			$("#problems-catergory-button").toggleClass('active');
 			$scope.showProblems = !$scope.showProblems;
+			$scope.showProblemText = ($scope.showProblems) ? "Hide" : "Show";
 		}
+		$scope.showProblemText = "Show";
 		$scope.showColorHelp = false;
 		$scope.toggleShowColorWinow = function()
 		{
@@ -121,6 +123,7 @@ webJPLControllers.controller('WebJPLProblems',
 			{
 				$("#problem-color-guide").slideDown('fast')
 			}
+			$("#problems-color-guide-button").toggleClass('active');
 			$scope.showColorHelp = !$scope.showColorHelp;
 			$scope.showColorText = ($scope.showColorHelp) ? "Hide" : "Show";
 		}

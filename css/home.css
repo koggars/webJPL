@@ -1,0 +1,32 @@
+#home-logout {
+    float: left;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 10px;
+}
+#home-student {
+    width: 98%;
+    text-align: center;
+    background-color: #3977AF;
+    color: white;
+    padding: 10px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #224D74;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5); 
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+#home-button-container {
+    width: 98%;
+    margin: 10px auto;
+}
+.home-button-divs {
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 10px;
+}
+.home-button {
+    padding: 23% 0px;
+}

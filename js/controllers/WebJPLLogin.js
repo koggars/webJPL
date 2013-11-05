@@ -13,7 +13,7 @@ webJPLControllers.controller('WebJPLLogin',
 		}
 		else
 		{
-			$location.path('/problems');
+			$location.path('/home');
 		}
 
 
@@ -34,7 +34,7 @@ webJPLControllers.controller('WebJPLLogin',
 						if(data.length == 3)
 						{
 							$cookieStore.put("userData", output);
-							$location.path('/problems');
+							$location.path('/home');
 						}
 						else
 						{
