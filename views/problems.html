@@ -15,8 +15,19 @@
 <span class='problems-button button' id='problems-color-guide-button' ng-click="toggleShowColorWinow()" id='problems-chButton'>{{showColorText}} Color Guide</span>
 <span style='display:block; clear:both'></span>
 
+<div id='problems-list-container' style='display:none'>
+	<ul id='problem-ul' ng-if='jplProblemNames.length>0'>
+		<li class='problems-list-item' ng-repeat="name in jplProblemNames">
+			<a ng-click='changeProblemName(name.value)' class='problems-list-names {{name.selected}}'>{{name.value}}</a>
+		</li>
+	</ul>
+	<span style='display:block; clear:both'></span>
+	<p style='text-align: center' ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
+		Loading JPL Problems Please wait..
+	</p>
+</div>
 
-<div id='problem-color-guide' style="display:none">
+<div id='problem-color-guide' class='boxEffect' style="display:none">
 	<span id='problem-color-guide-header'>Color Legend</span>
 	<div ng-repeat="guide in colorGuide" class='problem-color-row'>
 		<div class='problem-color-box' style='background-color: {{guide.color}}'>
@@ -24,17 +35,6 @@
 		<div class='problem-color-text'>{{guide.statusText}}</div>
 	</div>
 	<span style='display:block; clear:both'></span>
-</div>
-
-<div id='problems-list-container' style='display:none'>
-	<ul id='problem-ul' ng-if='jplProblemNames.length>0'>
-		<li class='problems-list-item' ng-repeat="name in jplProblemNames">
-			<a ng-click='changeProblemName(name.value)' class='problems-list-names {{name.selected}}'>{{name.value}}</a>
-		</li>
-	</ul>
-	<p style='text-align: center' ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
-		Loading JPL Problems Please wait..
-	</p>
 </div>
 
 <div ng-if='search == ""'>

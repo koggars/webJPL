@@ -1,1 +1,6 @@
 @import url("http://code.jquery.com/ui/1.10.3/themes/dot-luv/jquery-ui.css");
+
+.ui-dialog-titlebar {
+    background-image: none;
+    background-color: #485ccc;
+}
