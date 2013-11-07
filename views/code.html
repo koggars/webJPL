@@ -1,0 +1,26 @@
+<style type="text/css">
+#root-footer {
+    display: none;
+}	
+</style>
+
+<a class='button' id='code-back-button' href='#/problems'>Back</a>
+<div id='code-settings'>
+	<div id='code-settings-header'>Settings</div>
+	<span class='code-settings-label'>Font Size (Pixels): </span><input class='code-settings-input' value='16' type="number" min="16" max="100" ng-model='box.font'>
+	<span class='code-settings-label'>Box Size (Pixels): </span><input class='code-settings-input' value='800' type="number" min="16" ng-model='box.height'>
+	<span style="display:block; clear:both;"></span>
+	<div id='code-textbox-settings'>
+		<div class='code-textbox-settings-label'>Theme:</div>
+			<select class='code-textbox-settings-select' ng-model="box.theme" ng-options="t.text for t.value in ace.themes">
+				
+			</select>
+		<div class='code-textbox-settings-label'>Code Type:</div>
+			<select class='code-textbox-settings-select' ng-model="box.mode" ng-options="a.text for a.value in ace.mode">
+				
+			</select>
+	</div>
+</div>
+<div id='code-editor' style='height: {{box.height}}px; font-size: {{box.font}}px'>
+	
+</div>

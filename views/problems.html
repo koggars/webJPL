@@ -44,7 +44,7 @@
 	<div id='problem-boxes-container' ng-if='currentProblem.array != null'>
 		<div ng-repeat="problem in currentProblem.array">
 			<div class='problem-boxes' style='background-color:{{problem.color}}'>
-				<div class='problem-boxes-name'>{{problem.name}}</div>
+				<div class='problem-boxes-name' ng-click='gotoCode(problem.name)'>{{problem.name}}</div>
 				<div class='problem-boxes-info button' ng-click='displayProblemDesc(problem)'>i</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 	<div id='problem-boxes-container' ng-if='totalSearchArray.length > 0'>
 		<div ng-repeat="all in totalSearchArray | filter: search">
 			<div class='problem-boxes' style='background-color:{{all.color}}'>
-				<div class='problem-boxes-name'>{{all.name}}</div>
+				<div class='problem-boxes-name' ng-click='gotoCode(all.name)'>{{all.name}}</div>
 				<div class='problem-boxes-info button' ng-click='findObject(all.name)'>i</div>
 			</div>
 		</div>

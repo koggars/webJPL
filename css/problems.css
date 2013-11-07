@@ -62,7 +62,6 @@
     float: left;
     margin-right: 1%;
     margin-bottom: 10px;
-    padding: 15% 0px;
     color: #444;
     text-decoration: none;
     font-weight: bold;
@@ -83,13 +82,13 @@
     height: 10px;
     font-size: 12px;
     float: right;
-    margin-top: 10%;
-    margin-left: 10px;
-    position: absolute;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .problem-boxes-name {
     width: 100%;
     text-align: center;
+    padding: 20% 0px;
 }
 #problem-boxes-container {
     margin-top: 5px;
@@ -116,7 +115,6 @@
     border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.5); text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25); cursor: pointer; 
     width: 48%;
     float: left;
-    padding: 1% 0px;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 5px 1%;
 }
@@ -152,4 +150,9 @@
     text-align: center;
     margin-bottom: 5px;
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+.problems-list-names {
+    padding: 4% 0px;
+    display: block;
+    width: 100%;
 }

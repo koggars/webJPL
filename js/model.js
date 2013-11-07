@@ -36,7 +36,48 @@ webJPLApp.factory("jplStatus", function() {
                     {statusText : "Solution was obtained", color : "yellow"}];
   return statusArray;
 })
+webJPLApp.factory("aceModel", function() {
+  var aceModel = {
+      themes: [{text: "ambiance", value:"ambiance"},
+          {text: "chaos", value:"chaos"},
+          {text: "chrome", value:"chrome"},
+          {text: "clouds", value:"clouds"},
+          {text: "clouds midnight", value:"clouds_midnight"},
+          {text: "cobalt", value:"cobalt"},
+          {text: "crimson editor", value:"crimson_editor"},
+          {text: "dawn", value:"dawn"},
+          {text: "dreamweaver", value:"dreamweaver"},
+          {text: "eclipse", value:"eclipse"},
+          {text: "github", value:"github"},
+          {text: "idle fingers", value:"idle_fingers"},
+          {text: "kr", value:"kr"},
+          {text: "merbivore", value:"merbivore"},
+          {text: "merbivore soft", value:"merbivore_soft"},
+          {text: "mono industrial", value:"mono_industrial"},
+          {text: "monokai", value:"monokai"},
+          {text: "pastel on dark", value:"pastel_on_dark"},
+          {text: "solarized dark", value:"solarized_dark"},
+          {text: "solarized light", value:"solarized_light"},
+          {text: "terminal", value:"terminal"},
+          {text: "textmate", value:"textmate"},
+          {text: "tomorrow", value:"tomorrow"},
+          {text: "tomorrow night", value:"tomorrow_night"},
+          {text: "tomorrow night blue", value:"tomorrow_night_blue"},
+          {text: "tomorrow night bright", value:"tomorrow_night_bright"},
+          {text: "tomorrow night eighties", value:"tomorrow_night_eighties"},
+          {text: "twillight", value:"twillight"},
+          {text: "vibrant ink", value:"vibrant_ink"},
+          {text: "xcode", value:"xcode"}],
+      mode: [
+      {text: "Java", value:"java"},
+      {text: "C/C++", value:"c_cpp"},
+      {text: "Python", value:"phython"},
+      {text: "PHP", value:"php"},
+      {text: "Javascript", value:"javascript"}]
+    }
 
+  return aceModel;
+})
 webJPLApp.directive('student', function() {
   return {
     require: 'ngModel',
