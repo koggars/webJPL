@@ -12,7 +12,7 @@ webJPLControllers.controller('WebJPLHome',
 
 		$scope.navButtons = [
 			{title: "Problems", location: "#/problems", color: "green"},			
-			{title: "New Code", location: "", color: "blue"},
+			{title: "Help", location: "", color: "blue"},
 			{title: "Quizes", location: "", color: "red"},
-			{title: "About", location: "", color: "pink"}];
+			{title: "About", location: "#/about", color: "pink"}];
 	});

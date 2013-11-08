@@ -6,11 +6,15 @@
 }
 #code-editor {
     width: 98%;
-    color: white;
     margin: 5px auto;
     height: 800px;
     border-radius: 5px;
     font-size: 20px;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
 }
 #code-settings {
     width: 98%;
@@ -28,13 +32,11 @@
 }
 .code-settings-label {
     display: block;
-    width: 10%;
-    text-align: center;
-    margin: auto;
+    width: 50%;
+    font-size: 20px;
     float: left;
-    margin-right: 2%;
-    margin-top: 3px;
-    margin-left: 1%;
+    text-align: center;
+    margin: 5px auto;
 }
 .code-settings-input {
     display: block;
@@ -47,7 +49,153 @@
     border-bottom: 1px solid rgba(0,0,0,0.25);
 }
 #code-settings-header {
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#code-textbox-settings {
+    width: 80%;
+    margin-top: 5px;
+}
+.code-textbox-settings-label {
+    float: left;
+    text-align: right;
+    width: 50%;
+    line-height: 1;
+    margin: 7px 0px;
+}
+.code-textbox-settings-select {
+    background-color: white;
+    border: solid 1px #222;
+    width: 40%;
+    float: left;
+    margin: 1px 5%;
+    height: 26px;
+}
+.code-textbox-settings-select.ng-dirty {
+    background-color: white;
+}
+.code-settings.button {
+    width: 20%;
+    float: left;
+    margin: 5px 2%;
+}
+.code-settings.font.button {
+    background-color: chocolate;
+}
+.code-settings.font.decrease.button {
+    background-color: #A55217;
+}
+.code-settings.box.button {
+    background-color: crimson;
+}
+.code-settings.box.decrease.button {
+    background-color: #A71934;
+}
+#code-wrap-text-button {
+    background-color: blueviolet;
+    width: 20%;
+    margin: 5px auto;
+}
+
+.code-jpl.button {
+    width: 29%;
+    float: left;
+    margin: 5px 1.15%;
+    padding: 5px 1%;
+}
+
+.code-jpl.button.blue {
+    float: right;
+}
+
+#code-jpl-info {
+    display: block;
+    clear: both;
+    margin: 5px auto;
+}
+#code-jpl-info-loading {
+    width: 98%;
+    text-align: center;
+    background-color: #AAAF39;
+    color: white;
+    padding: 5px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #745A22;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+#code-jpl-info-mode-1-label {
+    float: left;
+    min-width: 150px;
+    width: 30%;
+    font-size: 20px;
+    margin-top: 3px;
+}
+#code-jpl-info-mode-1 {
+    width: 98%;
+    text-align: center;
+    background-color: #AF39A1;
+    color: white;
+    padding: 5px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #742264;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+#code-jpl-info-mode-1-output {
+    display: block;
+    width: 69%;
+    float: left;
+    height: 200px;
+    border: solid 3px black;
+    background-color: white;
+    font-family: monospace;
+    white-space: pre;
+    overflow-y: scroll;
+    color: black;
+    font-size: 20px;
+    overflow-x: scroll;
+}
+#code-jpl-info-mode-0 {
+    width: 98%;
+    text-align: center;
+
+    background-color: #39AF72;
+    color: white;
+    padding: 5px 0px;
+    line-height: 1;
+    margin: 5px auto;
+
+    border: solid 1px #227464;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+#code-jpl-info-mode-0-header {
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    width: 77%;
+    margin: 10px 0px;
+}
+.code-jpl-status {
+    float: left;
+    margin: 10px;
+    padding: 8px;
+    border: solid 1px rgb(29, 151, 63);
+    background-color: #E6DEDE;
+    color: #222;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.41) inset, -1px -1px 1px rgba(255, 255, 255, 0.99) inset;
+}
+#code-jpl-info-hide-btn {
+    float: none;
+    margin: auto;
 }

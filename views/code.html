@@ -7,19 +7,55 @@
 <a class='button' id='code-back-button' href='#/problems'>Back</a>
 <div id='code-settings'>
 	<div id='code-settings-header'>Settings</div>
-	<span class='code-settings-label'>Font Size (Pixels): </span><input class='code-settings-input' value='16' type="number" min="16" max="100" ng-model='box.font'>
-	<span class='code-settings-label'>Box Size (Pixels): </span><input class='code-settings-input' value='800' type="number" min="16" ng-model='box.height'>
+	<span class='code-settings-label'>Font Size (Pixels): {{box.font}}px</span>
+	<span class='code-settings-label'>Box Size (Pixels): {{box.height}}px</span>
+	<span style='display:block; clear:both'></span>
+	<span class='code-settings font button' ng-click='changeEditor(0)'>Increase Font Size</span>
+	<span class='code-settings font decrease button' ng-click='changeEditor(1)'>Decrease Font Size</span>
+	<span class='code-settings box button' ng-click='changeEditor(2)'>Increase Box Height</span>
+	<span class='code-settings box decrease button' ng-click='changeEditor(3)'>Decrease Box Height</span>
 	<span style="display:block; clear:both;"></span>
+	<span id='code-wrap-text-button' class='button {{buttonSelected}}' ng-click='toggleWordWraping()'>Wrap Text</span>
 	<div id='code-textbox-settings'>
 		<div class='code-textbox-settings-label'>Theme:</div>
-			<select class='code-textbox-settings-select' ng-model="box.theme" ng-options="t.text for t.value in ace.themes">
+			<select class='code-textbox-settings-select' ng-model="box.theme" ng-change="setTheme()" ng-options="o.data as o.text for o in ace.themes">
 				
 			</select>
-		<div class='code-textbox-settings-label'>Code Type:</div>
-			<select class='code-textbox-settings-select' ng-model="box.mode" ng-options="a.text for a.value in ace.mode">
-				
-			</select>
+		<div ng-show='isNotJava'>
+			<div class='code-textbox-settings-label'>Code Type: {{box.mode}}</div>
+				<select class='code-textbox-settings-select' ng-model="box.mode" ng-change="setMode()" ng-options="o.data as o.text for o in ace.mode">	
+				</select>
+		</div>
 	</div>
+	<span style='display:block; clear:both'></span>
+</div>
+<span class='code-jpl button red'>Run</span>
+<span class='code-jpl button green' ng-show="jplComplete">View Last Result</span>
+<span class='code-jpl button blue'>Test</span>
+
+<div id='code-jpl-info'>
+	<div id='code-jpl-info-loading'>
+		Compling And Testing...
+	</div>
+	<div id='code-jpl-info-mode-1'>
+		<div id='code-jpl-info-mode-1-label'>
+			Program Output:
+		</div>
+		<div id='code-jpl-info-mode-1-output'>
+
+		</div>
+		<span style='display:block; clear:both'></span>
+	</div>
+	<div id='code-jpl-info-mode-0'>
+		<div class='code-jpl-status'>
+			Failed 5 Results
+		</div>
+		<div id='code-jpl-info-mode-0-header'>
+			Testing Results
+		</div>
+		<span style='display:block; clear:both'></span>
+	</div>
+	<span class='code-jpl button green' id='code-jpl-info-hide-btn'>Hide Results</span>
 </div>
 <div id='code-editor' style='height: {{box.height}}px; font-size: {{box.font}}px'>
 	

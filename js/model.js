@@ -21,7 +21,8 @@ webJPLApp.factory("jplLinks",function(){
 	var jplLinks = {
 		"login" : "https://giant.ict.griffith.edu.au/webJPL/webJPLLogon.php",
 		"problems" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblems.php",
-		"statement" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblemStatements.php"
+		"statement" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblemStatements.php",
+    "code" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblem.php"
 	}
 
 	return jplLinks;
@@ -38,42 +39,42 @@ webJPLApp.factory("jplStatus", function() {
 })
 webJPLApp.factory("aceModel", function() {
   var aceModel = {
-      themes: [{text: "ambiance", value:"ambiance"},
-          {text: "chaos", value:"chaos"},
-          {text: "chrome", value:"chrome"},
-          {text: "clouds", value:"clouds"},
-          {text: "clouds midnight", value:"clouds_midnight"},
-          {text: "cobalt", value:"cobalt"},
-          {text: "crimson editor", value:"crimson_editor"},
-          {text: "dawn", value:"dawn"},
-          {text: "dreamweaver", value:"dreamweaver"},
-          {text: "eclipse", value:"eclipse"},
-          {text: "github", value:"github"},
-          {text: "idle fingers", value:"idle_fingers"},
-          {text: "kr", value:"kr"},
-          {text: "merbivore", value:"merbivore"},
-          {text: "merbivore soft", value:"merbivore_soft"},
-          {text: "mono industrial", value:"mono_industrial"},
-          {text: "monokai", value:"monokai"},
-          {text: "pastel on dark", value:"pastel_on_dark"},
-          {text: "solarized dark", value:"solarized_dark"},
-          {text: "solarized light", value:"solarized_light"},
-          {text: "terminal", value:"terminal"},
-          {text: "textmate", value:"textmate"},
-          {text: "tomorrow", value:"tomorrow"},
-          {text: "tomorrow night", value:"tomorrow_night"},
-          {text: "tomorrow night blue", value:"tomorrow_night_blue"},
-          {text: "tomorrow night bright", value:"tomorrow_night_bright"},
-          {text: "tomorrow night eighties", value:"tomorrow_night_eighties"},
-          {text: "twillight", value:"twillight"},
-          {text: "vibrant ink", value:"vibrant_ink"},
-          {text: "xcode", value:"xcode"}],
-      mode: [
-      {text: "Java", value:"java"},
-      {text: "C/C++", value:"c_cpp"},
-      {text: "Python", value:"phython"},
-      {text: "PHP", value:"php"},
-      {text: "Javascript", value:"javascript"}]
+      themes: [{text: "ambiance", data:"ambiance"},
+          {text: "chaos", data:"chaos"},
+          {text: "chrome", data:"chrome"},
+          {text: "clouds", data:"clouds"},
+          {text: "clouds midnight", data:"clouds_midnight"},
+          {text: "cobalt", data:"cobalt"},
+          {text: "crimson editor", data:"crimson_editor"},
+          {text: "dawn", data:"dawn"},
+          {text: "dreamweaver", data:"dreamweaver"},
+          {text: "eclipse", data:"eclipse"},
+          {text: "github", data:"github"},
+          {text: "idle fingers", data:"idle_fingers"},
+          {text: "kr", data:"kr"},
+          {text: "merbivore", data:"merbivore"},
+          {text: "merbivore soft", data:"merbivore_soft"},
+          {text: "mono industrial", data:"mono_industrial"},
+          {text: "monokai", data:"monokai"},
+          {text: "pastel on dark", data:"pastel_on_dark"},
+          {text: "solarized dark", data:"solarized_dark"},
+          {text: "solarized light", data:"solarized_light"},
+          {text: "terminal", data:"terminal"},
+          {text: "textmate", data:"textmate"},
+          {text: "tomorrow", data:"tomorrow"},
+          {text: "tomorrow night", data:"tomorrow_night"},
+          {text: "tomorrow night blue", data:"tomorrow_night_blue"},
+          {text: "tomorrow night bright", data:"tomorrow_night_bright"},
+          {text: "tomorrow night eighties", data:"tomorrow_night_eighties"},
+          {text: "twillight", data:"twillight"},
+          {text: "vibrant ink", data:"vibrant_ink"},
+          {text: "xcode", data:"xcode"}],
+
+      mode: [{text: "Java", data:"java"},
+      {text: "C/C++", data:"c_cpp"},
+      {text: "Python", data:"phython"},
+      {text: "PHP", data:"php"},
+      {text: "Javascript", data:"javascript"}]
     }
 
   return aceModel;

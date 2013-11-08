@@ -18,6 +18,10 @@ webJPLApp.config(
         templateUrl: 'views/home.html',
         controller: 'WebJPLHome'
       }).
+      when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'WebJPLAbout'
+      }).
       when('/logout', {
         templateUrl: 'views/logout.html',
         controller: 'WebJPLLogout'
