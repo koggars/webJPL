@@ -22,7 +22,7 @@
 		</li>
 	</ul>
 	<span style='display:block; clear:both'></span>
-	<p style='text-align: center' ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
+	<p style="text-align: center;margin: 0px;padding: 10px;" ng-if='jplProblemNames.length<=0 || jplProblemNames == null'>
 		Loading JPL Problems Please wait..
 	</p>
 </div>
@@ -38,7 +38,7 @@
 </div>
 
 <div ng-if='search == ""'>
-	<p style='text-align: center; font-weight: bold' ng-if='currentProblem == null'>
+	<p id='problem-strating-text' style='text-align: center; font-weight: bold' ng-if='currentProblem == null'>
 		Search Or Select a Problem Catergory
 	</p>
 	<div id='problem-boxes-container' ng-if='currentProblem.array != null'>

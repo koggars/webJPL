@@ -1,9 +1,8 @@
 webJPLControllers.controller('WebJPLHome', 
 	function WebJPLHome($rootScope, GlobalHeader, $scope, $http, jplLinks, $cookieStore, $location) {
-		var userData = $cookieStore.get("userData");
-
-		if(userData == null)
-			$location.path("/");	
+		var userData = GlobalHeader.rediect($cookieStore.get("userData"), $location);
+		if(userData == -1)
+			return;	
 
 		$rootScope.css = "home";
 

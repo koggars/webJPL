@@ -1,10 +1,8 @@
 webJPLControllers.controller('WebJPLProblems', 
-	function WebJPLProblems($rootScope, $scope, $http, jplLinks, $cookieStore, $location, $window, jplStatus) {
-
-		var userData = $cookieStore.get("userData");
-
-		if(userData == null)
-			$location.path("/");	
+	function WebJPLProblems($rootScope, GlobalHeader, $scope, $http, jplLinks, $cookieStore, $location, $window, jplStatus) {
+		var userData = GlobalHeader.rediect($cookieStore.get("userData"), $location);
+		if(userData == -1)
+			return;
 
 		$rootScope.header =  "JPL Problems";
 		$rootScope.css = "problems";

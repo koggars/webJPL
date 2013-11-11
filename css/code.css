@@ -33,10 +33,11 @@
 .code-settings-label {
     display: block;
     width: 50%;
-    font-size: 20px;
+    font-size: 16px;
     float: left;
     text-align: center;
     margin: 5px auto;
+    padding: 3% 0px;
 }
 .code-settings-input {
     display: block;
@@ -75,29 +76,6 @@
 .code-textbox-settings-select.ng-dirty {
     background-color: white;
 }
-.code-settings.button {
-    width: 20%;
-    float: left;
-    margin: 5px 2%;
-}
-.code-settings.font.button {
-    background-color: chocolate;
-}
-.code-settings.font.decrease.button {
-    background-color: #A55217;
-}
-.code-settings.box.button {
-    background-color: crimson;
-}
-.code-settings.box.decrease.button {
-    background-color: #A71934;
-}
-#code-wrap-text-button {
-    background-color: blueviolet;
-    width: 20%;
-    margin: 5px auto;
-}
-
 .code-jpl.button {
     width: 29%;
     float: left;
@@ -114,7 +92,7 @@
     clear: both;
     margin: 5px auto;
 }
-#code-jpl-info-loading {
+.code-jpl-info-loading {
     width: 98%;
     text-align: center;
     background-color: #AAAF39;
@@ -132,7 +110,7 @@
     float: left;
     min-width: 150px;
     width: 30%;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 3px;
 }
 #code-jpl-info-mode-1 {
@@ -140,7 +118,7 @@
     text-align: center;
     background-color: #AF39A1;
     color: white;
-    padding: 5px 0px;
+    padding: 1% 0px;
     line-height: 1;
     margin: 5px auto;
     border: solid 1px #742264;
@@ -151,7 +129,7 @@
 }
 #code-jpl-info-mode-1-output {
     display: block;
-    width: 69%;
+    width: 65%;
     float: left;
     height: 200px;
     border: solid 3px black;
@@ -167,35 +145,200 @@
     width: 98%;
     text-align: center;
 
-    background-color: #39AF72;
+    background-color: #217596;
     color: white;
     padding: 5px 0px;
     line-height: 1;
     margin: 5px auto;
 
-    border: solid 1px #227464;
+    border: solid 1px #234E5F;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.5);
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
     border-bottom: 1px solid rgba(0,0,0,0.25);
 }
-#code-jpl-info-mode-0-header {
+#code-jpl-info-mode-0-header, #code-jpl-error-header {
     font-size: 20px;
     font-weight: bold;
     float: left;
-    width: 77%;
-    margin: 10px 0px;
+    width: 69%;
+    margin: 20px 20%;
 }
 .code-jpl-status {
+    position: absolute;
     float: left;
     margin: 10px;
     padding: 8px;
-    border: solid 1px rgb(29, 151, 63);
-    background-color: #E6DEDE;
-    color: #222;
+    border: solid 1px #113F52;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.41) inset, -1px -1px 1px rgba(255, 255, 255, 0.99) inset;
+    text-shadow: none;
 }
 #code-jpl-info-hide-btn {
     float: none;
     margin: auto;
+}
+#code-jpl-input {
+    clear: both;
+    width: 98%;
+    text-align: center;
+    background-color: #3947AF;
+    color: white;
+    margin: 10px auto;
+    padding: 1% 0px;
+}
+#code-jpl-input-textarea {
+    display: block;
+    width: 65%;
+    float: left;
+    height: 200px;
+    border: solid 3px black;
+    background-color: white;
+    font-family: monospace;
+    white-space: pre;
+    overflow-y: scroll;
+    color: black;
+    font-size: 20px;
+    resize: none;
+    margin-bottom: 10px;
+}#code-settings-button {
+    margin: 10px auto;
+    width: 60%;
+}
+#code-jpl-input-label {
+    float: left;
+    min-width: 150px;
+    width: 30%;
+    font-size: 20px;
+    margin-top: 3px;
+}
+.code-jpl-input.button {
+    width: 30%;
+    margin: 10px;
+    background-color: darkgreen;
+}
+.code-settings.button {
+    width: 21%;
+    float: left;
+    font-size: 15px;
+    padding: 3% 1%;
+    margin: 0px 1%;
+}
+#code-wrap-text-button {
+    width: 30%;
+    margin: 10px auto;
+    padding: 2%;
+    background-color: #00e331;
+}
+
+#code-settings-button-show {
+    width: 40%;
+    text-align: center;
+    background-color: #3977AF;
+    color: white;
+    padding: 5px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #224D74;
+    border-radius: 5px;
+}
+.code-settings.button {
+    float: left;
+    margin: 0px 1%;
+    width: 21%;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 2% 1%;
+}
+#code-wrap-text-button {
+    margin: 10px auto;
+    width: 30%;
+}
+#code-settings-button-hide {
+    float: right;
+    font-size: 12px;
+    clear: both;
+    margin-right: 5px;
+}
+.code-settings.red.decrease.button {
+    background-color: #9B213B;
+}
+.code-settings.blue.decrease.button {
+    background-color: #007FE3;
+}
+#code-jpl-input-cancel {
+    float: right;
+    background-color: darkred;
+}
+#code-jpl-input-send {
+    float: left;
+}
+#code-jpl-last {
+    font-size: 16px;
+    padding: 7px 1%;
+}
+#code-jpl-error-header {
+    width: 100%;
+}
+#code-jpl-info-error {
+    background-color: #D8687F;
+    color: white; text-decoration: none; font-weight: bold; line-height: 1; font-size: 20px;    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 98%;
+    margin: 10px auto;
+}
+#code-jpl-info-error p {
+    font-size: 16px;
+    font-weight: normal;
+}
+.code-jpl-text-element {
+    display: table-cell;
+    border-left: solid 1px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 3px;
+    text-shadow: none;
+}
+.code-jpl-test-row {
+    clear: both;
+}
+.code-jpl-test-row.header {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.code-jpl-text-element.test {
+    width: 8%;
+    text-align: center;
+}
+.code-jpl-text-element.input {
+    width: 28%;
+}
+.code-jpl-text-element.expected {
+    width: 28%;
+}
+.code-jpl-text-element.output {
+    width: 28%;
+}
+.code-jpl-test-row {
+    display: table-row;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.code-jpl-text-element.header {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+#code-jpl-test-table {
+    clear: both;
+    display: table;
+    width: 98%;
+    margin: auto;
+    border: solid 2px rgba(0, 0, 0, 0.3);
+}
+.code-jpl-text-element.output.false, .code-jpl-status.false {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+.code-jpl-text-element.output.true, .code-jpl-status.true{
+    background-color: rgba(0, 255, 0, 0.4);
 }

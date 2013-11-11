@@ -5,15 +5,16 @@
 </style>
 
 <a class='button' id='code-back-button' href='#/problems'>Back</a>
-<div id='code-settings'>
+<div id='code-settings-button-show' class='button red' ng-hide='codeSettingsShow' ng-click='codeSettingsShow=true;'>Show Settings</div>
+<div id='code-settings' ng-show='codeSettingsShow'>
 	<div id='code-settings-header'>Settings</div>
-	<span class='code-settings-label'>Font Size (Pixels): {{box.font}}px</span>
-	<span class='code-settings-label'>Box Size (Pixels): {{box.height}}px</span>
+	<span class='code-settings-label'>Font Size (Pixels): <b>{{box.font}}</b>px</span>
+	<span class='code-settings-label'>Box Size (Pixels): <b>{{box.height}}</b>px</span>
 	<span style='display:block; clear:both'></span>
-	<span class='code-settings font button' ng-click='changeEditor(0)'>Increase Font Size</span>
-	<span class='code-settings font decrease button' ng-click='changeEditor(1)'>Decrease Font Size</span>
-	<span class='code-settings box button' ng-click='changeEditor(2)'>Increase Box Height</span>
-	<span class='code-settings box decrease button' ng-click='changeEditor(3)'>Decrease Box Height</span>
+	<span class='code-settings red button' ng-click='changeEditor(0)'>Increase Font Size</span>
+	<span class='code-settings red decrease button' ng-click='changeEditor(1)'>Decrease Font Size</span>
+	<span class='code-settings blue button' ng-click='changeEditor(2)'>Increase Box Height</span>
+	<span class='code-settings blue decrease button' ng-click='changeEditor(3)'>Decrease Box Height</span>
 	<span style="display:block; clear:both;"></span>
 	<span id='code-wrap-text-button' class='button {{buttonSelected}}' ng-click='toggleWordWraping()'>Wrap Text</span>
 	<div id='code-textbox-settings'>
@@ -27,35 +28,67 @@
 				</select>
 		</div>
 	</div>
+	<div class='button pink' id='code-settings-button-hide' ng-click='codeSettingsShow=false;'>Hide Settings</div>
 	<span style='display:block; clear:both'></span>
 </div>
-<span class='code-jpl button red'>Run</span>
-<span class='code-jpl button green' ng-show="jplComplete">View Last Result</span>
-<span class='code-jpl button blue'>Test</span>
-
-<div id='code-jpl-info'>
-	<div id='code-jpl-info-loading'>
+<span class='code-jpl button red' ng-click='jplGetInput = !jplGetInput'>Run</span>
+<span class='code-jpl button green' id='code-jpl-last' ng-show="hideArr[1] || hideArr[2] || hideArr[3]"  ng-click="unhide()">View Last Result</span>
+<span class='code-jpl button blue' ng-click='runJPl(0, null)'>Test</span>
+<div class='boxEffect' id='code-jpl-input' ng-show='jplGetInput'>
+	<div id='code-jpl-input-label'>
+		Program input:
+	</div>
+	<textarea id='code-jpl-input-textarea' ng-model='jplInput'></textarea>
+	<span class='code-jpl-input button' id='code-jpl-input-send' ng-click='runJPl(1, jplInput)'>Send</span>
+	<span class='code-jpl-input button' id='code-jpl-input-cancel' ng-click='jplGetInput = false'>Cancel</span>
+	<span style='display:block; clear:both'></span>
+</div>
+<div id='code-jpl-info' ng-show='jplProblemLoading || jplLoading || jplComplete || jplUserTest || jplError'>
+	<div class='boxEffect code-jpl-info-loading' ng-show='jplProblemLoading'>
+		Problem Loading...
+	</div>
+	<div class='boxEffect code-jpl-info-loading' ng-show='jplLoading'>
 		Compling And Testing...
 	</div>
-	<div id='code-jpl-info-mode-1'>
+	<div class='boxEffect' id='code-jpl-info-mode-1' ng-show='jplUserTest'>
 		<div id='code-jpl-info-mode-1-label'>
 			Program Output:
 		</div>
-		<div id='code-jpl-info-mode-1-output'>
-
-		</div>
+		<div id='code-jpl-info-mode-1-output'>{{jplUserTestOutput}}</div>
 		<span style='display:block; clear:both'></span>
 	</div>
-	<div id='code-jpl-info-mode-0'>
-		<div class='code-jpl-status'>
-			Failed 5 Results
+	<div class='boxEffect' id='code-jpl-info-mode-0' ng-show='jplComplete'>
+		<div class='code-jpl-status {{jplTestStatus.passed}}'>
+			{{jplTestStatus.value}}
 		</div>
 		<div id='code-jpl-info-mode-0-header'>
 			Testing Results
 		</div>
+		<div id='code-jpl-test-table'>
+			<div class='code-jpl-test-row header'>
+				<div class='code-jpl-text-element header test'>Test</div>
+				<div class='code-jpl-text-element header input'>Test Input</div>
+				<div class='code-jpl-text-element header expected'>Expected Output</div>
+				<div class='code-jpl-text-element header output'>Actual Output</div>
+			</div>
+			<div class='code-jpl-test-row' ng-repeat='test in jplTestResults'>
+				<div class='code-jpl-text-element test'>{{test.test}}</div>
+				<div class='code-jpl-text-element input'>{{test.input}}</div>
+				<div class='code-jpl-text-element expected'>{{test.expected}}</div>
+				<div class='code-jpl-text-element output {{test.passed}}'>{{test.output}}</div>
+			</div>
+		</div>
+
 		<span style='display:block; clear:both'></span>
 	</div>
-	<span class='code-jpl button green' id='code-jpl-info-hide-btn'>Hide Results</span>
+	<div class='boxEffect' id='code-jpl-info-error' ng-show='jplError'>
+		<div id='code-jpl-error-header'>
+			{{jplErrorHeader}}
+		</div>
+		<p>{{jplErrorData}}</p>
+		<span style='display:block; clear:both'></span>
+	</div>
+	<span class='code-jpl button green' id='code-jpl-info-hide-btn' ng-show='jplComplete || jplUserTest || jplError' ng-click="hide()">Hide Results</span>
 </div>
 <div id='code-editor' style='height: {{box.height}}px; font-size: {{box.font}}px'>
 	

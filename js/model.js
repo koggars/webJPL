@@ -10,6 +10,19 @@ webJPLApp.factory("GlobalHeader",function(){
       header.css = type.css;
 
       return header;
+    },
+    rediect: function(userData, location)
+    {
+      if(userData == null || userData.username == null || userData.coursecode == null || userData.password == null)
+      {
+        location.path("/");
+        return -1;
+      }
+      else
+      {
+        return userData;
+      }
+
     }
 
 	}
@@ -22,7 +35,8 @@ webJPLApp.factory("jplLinks",function(){
 		"login" : "https://giant.ict.griffith.edu.au/webJPL/webJPLLogon.php",
 		"problems" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblems.php",
 		"statement" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblemStatements.php",
-    "code" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblem.php"
+    "code" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblem.php",
+    "run" : "https://giant.ict.griffith.edu.au/webJPL/webJPLrun.php"
 	}
 
 	return jplLinks;

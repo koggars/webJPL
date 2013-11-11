@@ -7,22 +7,22 @@
 #problems-search {
     width: 98%;
     text-align: center;
-    background-color: #3CAD38;
     color: white;
     line-height: 1;
     margin: 5px auto;
     padding: 5px 0px;
+    background-color: #e300b2;
 }
 #problems-search-label {
-    width: 10%;
+    width: 15%;
     float: left;
     display: block;
     text-align: center;
-    margin: 9px 0px;
-    font-size: 20px;
+    margin: 12px 0px;
+    font-size: 15px;
 }
 #problems-search-input {
-    width: 86%;
+    width: 79%;
     border: none;
     border-radius: 5px;
 
@@ -32,17 +32,17 @@
     font-size: 20px;
 }
 #problems-status {
-    background-color: #AD383C;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 1;
-    font-size: 20px;
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-    padding: 10px 0px;
     width: 98%;
-    margin: 5px auto;
     text-align: center;
+    background-color: #3977AF;
+    color: white;
+    padding: 10px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #224D74;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
 }
 .problems-button {
     float: left;
@@ -51,11 +51,11 @@
     padding: 10px 0px;
 }
 #problems-catergory-button {
-    background-color: #AD6F38;
+    background-color: #00e331;
 }
 
 #problems-color-guide-button {
-    background-color: #38ADA9;
+    background-color: #e00331;
 }
 .problem-boxes {
     width: 49%;
@@ -95,10 +95,12 @@
     margin-left: 1%;
 }
 
-#problems-list-container {
-    background-color: darkred;
-    
-    color: white; text-decoration: none; font-weight: bold; line-height: 1; 
+#problems-list-container {   
+    background-color: #00b2e3;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
     font-size: 15px;
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
     width: 98%;
@@ -111,22 +113,28 @@
     padding: 1%;
 }
 .problems-list-item {
-    text-align: center; display: block;       border: none; 
-    border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.5); text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25); cursor: pointer; 
+    text-align: center;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
     width: 48%;
     float: left;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     margin: 5px 1%;
 }
 #problem-color-guide {
     width: 96%;
     margin: 5px auto;
     padding: 1%;
-    background-color: coral;
+    background-color: #00b2e3;
 }
 .problem-color-text.ng-binding {
     float: left;
-    width: 69%;
+    width: 69%;    border: none;
     text-align: left;
     color: black;
     margin: 0% 1%;
@@ -140,11 +148,18 @@
     padding: 10% 0px;
     width: 20%;
     float: left;
-    border: none; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.5); text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);    border: none;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
     margin-right: 4%;
 }
 #problem-color-guide-header {
-    color: white; text-decoration: none; font-weight: bold; line-height: 1; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
     font-size: 30px;
     display: block;
     text-align: center;
@@ -155,4 +170,18 @@
     padding: 4% 0px;
     display: block;
     width: 100%;
+}
+#problem-strating-text {
+    width: 98%;
+
+    text-align: center;
+    background-color: #3977AF;
+    color: white;
+    padding: 10px 0px;
+    line-height: 1;
+    margin: 5px auto;
+    border: solid 1px #224D74;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
 }

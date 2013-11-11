@@ -1,10 +1,8 @@
 webJPLControllers.controller('WebJPLAbout', 
-	function WebJPLAbout($rootScope, $cookieStore, $location) {
-		var userData = $cookieStore.get("userData");
-
-
-		if(userData == null)
-			$location.path("/");
+	function WebJPLAbout($rootScope, GlobalHeader, $cookieStore, $location) {
+		var userData = GlobalHeader.rediect($cookieStore.get("userData"), $location);
+		if(userData == -1)
+			return;
 
 		$rootScope.css = "about";
 

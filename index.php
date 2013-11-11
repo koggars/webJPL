@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <!DOCTYPE HTML>
 <html lang="en" ng-app="webJPLApp">
 	<head>
@@ -7,7 +8,7 @@
 	    <meta name="apple-mobile-web-app-capable" content="yes">
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 	    <link rel="stylesheet" href="css/root.css" />
-		<link rel="stylesheet" href="css/{{css}}.css" />
+		<link rel="stylesheet" href="css/{{css}}.css" ng-show='css != null || css != ""'/>
 
 		<!-- AngularJS MVC Framework -->
 		<script src="lib/AngularJS/angular.js"></script>
@@ -24,6 +25,7 @@
 		<!-- Main App Javascript (Contains Routing) -->
 		<script src="js/app.js"></script>
 		<script src="js/model.js"></script>
+		<script src="js/WebJPLCodeModel.js"></script>
 
 		<!-- Main App Controlers -->
 		<script src="js/controllers/WebJPLLogin.js"></script>
