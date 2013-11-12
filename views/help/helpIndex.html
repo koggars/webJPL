@@ -1,0 +1,9 @@
+<a class='help-back button' href='#/home'>Back</a>
+<div id='help-student'>Course: {{cCode}}, Student: {{student}}</div>
+<div id='help-button-container'>
+	<div ng-repeat='link in navButtons' class='help-button-divs'>
+		<a class='help-button button {{link.color}}' href="{{link.location}}">
+			{{link.title}}
+		</a>
+	</div>
+</div>

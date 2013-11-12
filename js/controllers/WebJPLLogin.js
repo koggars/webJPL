@@ -19,14 +19,23 @@ webJPLControllers.controller('WebJPLLogin',
 
 		$scope.login = login;
 		$scope.loginError = "";
+
+		$scope.courses = [
+			{text: "1001ICT", data: "1001ICT"},
+			{text: "7001ICT", data: "7001ICT"},
+			{text: "1005ICT", data: "1005ICT"},
+			{text: "7005ICT", data: "7005ICT"},
+		]
+
 		$scope.loginFunction = function(login)
 		{
-
 			var output = {
 				coursecode:$scope.login.course,
 				username:$scope.login.student,
 				password:$scope.login.password
 			}
+
+
 			if(output.coursecode != null && output.username != null && output.password != null)
 				if(login.$valid)
 				{

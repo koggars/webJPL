@@ -36,7 +36,9 @@ webJPLApp.factory("jplLinks",function(){
 		"problems" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblems.php",
 		"statement" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblemStatements.php",
     "code" : "https://giant.ict.griffith.edu.au/webJPL/webJPLProblem.php",
-    "run" : "https://giant.ict.griffith.edu.au/webJPL/webJPLrun.php"
+    "run" : "https://giant.ict.griffith.edu.au/webJPL/webJPLrun.php",
+    "help" : "https://giant.ict.griffith.edu.au/webJPL/webJPLHelp.php",
+    "helpfiles": "https://giant.ict.griffith.edu.au/JPLFiles/helpFiles/"
 	}
 
 	return jplLinks;

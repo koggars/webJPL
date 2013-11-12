@@ -24,8 +24,11 @@
 
 		<!-- Main App Javascript (Contains Routing) -->
 		<script src="js/app.js"></script>
-		<script src="js/model.js"></script>
-		<script src="js/WebJPLCodeModel.js"></script>
+
+		<!-- Main App Models -->
+		<script src="js/models/WebJPLModels.js"></script>
+		<script src="js/models/WebJPLCodeModel.js"></script>
+		<script src="js/models/WebJPLHelpModel.js"></script>
 
 		<!-- Main App Controlers -->
 		<script src="js/controllers/WebJPLLogin.js"></script>
@@ -34,6 +37,13 @@
 		<script src="js/controllers/WebJPLCode.js"></script>
 		<script src="js/controllers/WebJPLHome.js"></script>
 		<script src="js/controllers/WebJPLAbout.js"></script>
+
+		<!-- Help Page Controlers -->
+		<script src="js/controllers/WebJPLHelp/WebJPLHelpIndex.js"></script>
+		<script src="js/controllers/WebJPLHelp/WebJPLHelpTut.js"></script>
+		<script src="js/controllers/WebJPLHelp/WebJPLHelpVideos.js"></script>
+		<script src="js/controllers/WebJPLHelp/WebJPLHelpExamples.js"></script>
+		<script src="js/controllers/WebJPLHelp/WebJPLHelpSol.js"></script>
 	</head>
 	<body>
 		<div id='root-main'>

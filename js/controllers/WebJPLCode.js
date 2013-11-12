@@ -4,7 +4,6 @@ webJPLControllers.controller('WebJPLCode',
 		if(userData == -1)
 			return;
 			
-
 		$rootScope.css = "code";
 		var editor = ace.edit("code-editor");
 		var code = $location.search().c;
@@ -35,11 +34,14 @@ webJPLControllers.controller('WebJPLCode',
 			});
 		}
 		$scope.isNotJava = (code == null);
-		$scope.box = {
-				height: 800, font: 20,
-				theme: aceModel.themes[16].data,
-				mode: aceModel.mode[0].data
-		};
+		
+		$scope.box = $cookieStore.get("boxSettings");
+		if($scope.box == null)
+			$scope.box = {
+					height: 800, font: 20,
+					theme: aceModel.themes[16].data,
+					mode: aceModel.mode[0].data
+			};
 		$scope.box.wordWraping = false;
 
 		$scope.toggleWordWraping = function()
@@ -199,6 +201,8 @@ webJPLControllers.controller('WebJPLCode',
 			$scope.hideArr = [false, false, false, false];
 		}
 
-
+		$scope.$watchCollection('box', function() {
+			$cookieStore.put("boxSettings", $scope.box);
+		})
 		editor.setValue("");
 	});

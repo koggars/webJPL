@@ -5,13 +5,7 @@
 <form id='login-form' name='loginForm' ng-model='loginForm' name="form" class="css-form" novalidate ng-submit='loginFunction(loginForm)'>
 	<div class='login-label'>Course:</div>
 	<div class='login-input'>
-		<select ng-model='login.course' notempty>
-			<option value="1001ICT" selected="selected">1001ICT</option>
-			<option value="7001ICT">7001ICT</option>
-			<option value="1005ICT">1005ICT</option>
-			<option value="7005ICT">7005ICT</option>
-			<option value="GRIFFICT1">GRIFFICT1</option>
-			<option value="GRIFFICT2">GRIFFICT2</option>
+		<select ng-model='login.course' ng-options="o.data as o.text for o in courses" notempty>
 		</select>
 	</div>
 	

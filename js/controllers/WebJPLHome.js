@@ -11,7 +11,7 @@ webJPLControllers.controller('WebJPLHome',
 
 		$scope.navButtons = [
 			{title: "Problems", location: "#/problems", color: "green"},			
-			{title: "Help", location: "", color: "blue"},
-			{title: "Quizes", location: "", color: "red"},
+			{title: "Help", location: "#/help", color: "blue"},
+			{title: "JPL Website", location: "http://www.ict.griffith.edu.au/JPL/", color: "red"},
 			{title: "About", location: "#/about", color: "pink"}];
 	});

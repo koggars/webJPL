@@ -34,6 +34,26 @@ webJPLApp.config(
         templateUrl: 'views/code.html',
         controller: 'WebJPLCode'
       }).
+      when('/help', {
+        templateUrl: 'views/help/helpIndex.html',
+        controller: 'WebJPLHelpIndex'
+      }).
+      when('/help/tutorials', {
+        templateUrl: 'views/help/helpTut.html',
+        controller: 'WebJPLHelpTut'
+      }).
+      when('/help/videos', {
+        templateUrl: 'views/help/helpVideo.html',
+        controller: 'WebJPLHelpVideos'
+      }).
+      when('/help/examples', {
+        templateUrl: 'views/help/helpExamples.html',
+        controller: 'WebJPLHelpExamples'
+      }).
+      when('/help/solutions', {
+        templateUrl: 'views/help/helpSol.html',
+        controller: 'WebJPLHelpSol'
+      }).
       otherwise({
         redirectTo: '/'
       })

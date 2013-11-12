@@ -1,0 +1,8 @@
+<a class='help-back button' href='#/help'>Back</a>
+
+<div id='help-vid-list'>
+	<div ng-repeat='vid in videos'>
+		<span style='display:none' ng-init="mod = $index % buttonColors.length"></span>
+		<a class='help-vid button' style='background-color: #{{buttonColors[mod]}}' ng-click='video'>{{vid.title}}</a>
+	</div>
+</div>

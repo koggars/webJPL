@@ -1,0 +1,8 @@
+<a class='help-back button' href='#/help'>Back</a>
+
+<div id='help-tut-list'>
+	<div ng-repeat='tut in tutorials'>
+		<span style='display:none' ng-init="mod = $index % buttonColors.length"></span>
+		<a class='help-tut button' style='background-color: #{{buttonColors[mod]}}' target='_blank' href='{{tut.link}}'>{{tut.title}}</a>
+	</div>
+</div>

@@ -4,6 +4,10 @@ webJPLControllers.controller('WebJPLProblems',
 		if(userData == -1)
 			return;
 
+		if(userData.coursecode.charAt(0) == '7')
+		{
+			userData.coursecode = "1"+userData.coursecode.substr(1);
+		}
 		$rootScope.header =  "JPL Problems";
 		$rootScope.css = "problems";
 		//$rootScope.showJPLImage = true;
